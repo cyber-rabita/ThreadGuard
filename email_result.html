@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Email Analysis Result</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #1f2937;
+      }
+
+      .navbar {
+        background: #111827;
+        color: white;
+        padding: 20px 50px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .logo span {
+        color: #22c55e;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .result-card {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .score {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .score-number {
+        font-size: 60px;
+        font-weight: bold;
+      }
+
+      .risk {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .section {
+        margin-top: 30px;
+      }
+
+      .section h2 {
+        margin-bottom: 15px;
+      }
+
+      ul {
+        padding-left: 25px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      .back {
+        display: inline-block;
+        margin-top: 30px;
+        text-decoration: none;
+        color: #111827;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">🛡️ Threat<span>Guard</span></div>
+    </nav>
+
+    <main class="container">
+      <div class="result-card">
+        <div class="title">
+          <h1>📧 Email Analysis Result</h1>
+        </div>
+
+        <div class="score">
+          <div class="score-number">{{ score }}/100</div>
+
+          <div class="risk">Risk Level: {{ risk }}</div>
+        </div>
+
+        <div class="section">
+          <h2>Detected Indicators</h2>
+
+          {% if indicators %}
+
+          <ul>
+            {% for indicator in indicators %}
+
+            <li>⚠️ {{ indicator }}</li>
+
+            {% endfor %}
+          </ul>
+
+          {% else %}
+
+          <p>No suspicious indicators detected.</p>
+
+          {% endif %}
+        </div>
+
+        <div class="section">
+          <h2>Analyzed Email</h2>
+
+          <p>
+            <strong>Sender:</strong>
+            {{ sender }}
+          </p>
+
+          <br />
+
+          <p>
+            <strong>Subject:</strong>
+            {{ subject }}
+          </p>
+        </div>
+
+        <a href="/email" class="back"> ← Analyze Another Email </a>
+      </div>
+    </main>
+  </body>
+</html>

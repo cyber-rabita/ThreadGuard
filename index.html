@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ThreatGuard</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #1f2937;
+      }
+
+      .navbar {
+        background: #111827;
+        color: white;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .logo span {
+        color: #22c55e;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .hero {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+      }
+
+      .hero p {
+        color: #6b7280;
+        font-size: 18px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+
+      .icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+      }
+
+      .card h2 {
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: #6b7280;
+        margin-bottom: 20px;
+      }
+
+      button {
+        border: none;
+        padding: 12px 22px;
+        border-radius: 8px;
+        background: #111827;
+        color: white;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      button:hover {
+        background: #22c55e;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 60px;
+        color: #6b7280;
+      }
+
+      @media (max-width: 800px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">🛡️ Threat<span>Guard</span></div>
+
+      <div>Cybersecurity Detection System</div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Welcome to ThreatGuard</h1>
+
+        <p>Phishing Email & Malware Detection and Response System</p>
+      </section>
+
+      <section class="cards">
+        <div class="card">
+          <div class="icon">📧</div>
+
+          <h2>Email Analysis</h2>
+
+          <p>Analyze suspicious emails and identify phishing indicators.</p>
+          <a href="/email">
+            <button>Analyze Email</button>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔗</div>
+
+          <h2>URL Analysis</h2>
+
+          <p>Check suspicious links and identify potential threats.</p>
+          <a href="/url">
+            <button>Analyze URL</button>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="icon">🦠</div>
+
+          <h2>File Analysis</h2>
+
+          <p>Analyze files for suspicious malware-related indicators.</p>
+
+          <a href="/file">
+            <button>Analyze File</button>
+          </a>
+        </div>
+      </section>
+
+      <div class="footer">
+        <p>ThreatGuard © 2026 | Cybersecurity Fundamentals Project</p>
+      </div>
+    </main>
+  </body>
+</html>

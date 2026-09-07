@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>File Analysis - ThreatGuard</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #1f2937;
+      }
+
+      .navbar {
+        background: #111827;
+        color: white;
+        padding: 20px 50px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .logo span {
+        color: #22c55e;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        color: #6b7280;
+      }
+
+      .form-card {
+        background: white;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .form-group {
+        margin-bottom: 22px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input[type="file"] {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 15px;
+        background: white;
+      }
+
+      .analyze-btn {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        background: #111827;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .analyze-btn:hover {
+        background: #22c55e;
+      }
+
+      .back {
+        display: inline-block;
+        margin-top: 20px;
+        color: #374151;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">🛡️ Threat<span>Guard</span></div>
+    </nav>
+
+    <main class="container">
+      <div class="header">
+        <h1>🦠 File Analysis</h1>
+
+        <p>Upload a file to check for suspicious indicators.</p>
+      </div>
+
+      <div class="form-card">
+        <form
+          method="POST"
+          action="/analyze-file"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            <label for="file"> Select File </label>
+
+            <input type="file" id="file" name="file" required />
+          </div>
+
+          <button type="submit" class="analyze-btn">🔍 Analyze File</button>
+        </form>
+
+        <a href="/" class="back"> ← Back to Dashboard </a>
+      </div>
+    </main>
+  </body>
+</html>
